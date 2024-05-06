@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
+
+.card { 
+    width: 100%;
+    max-width: var(--max-card-width, 720px);
+    border: 1px solid var(--text-color);
+    border-radius: var(--border-radius);
+    background-color: var(--foreground-color);
+    box-shadow: 2px 3px 4px 2px var(--text-color);
+    padding: 1rem;
+    text-align: center;
+}
