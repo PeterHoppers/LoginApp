@@ -1,9 +1,16 @@
+'use client';
+
 import Link from "next/link";
 import styles from "./login-form.module.css";
+import { useFormState, useFormStatus } from 'react-dom';
+import { authenticate } from '@/app/lib/actions';
 
 export default function LoginForm() {
+    const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+    const { pending } = useFormStatus();
+
     return (
-        <form className={styles.form}>
+        <form action={dispatch} className={styles.form}>
            <input
                 className=""
                 id="email"
@@ -23,7 +30,9 @@ export default function LoginForm() {
                 required
                 minLength={6}
               />
-            <button className="primary-button">
+            <button 
+                className="primary-button"
+            >
                 Login
             </button>
             <Link
