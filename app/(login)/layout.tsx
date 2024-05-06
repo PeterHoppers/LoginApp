@@ -7,9 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <main className={styles.main}>
       <section className={styles.card}>
         <h1>The Login Application</h1>
-        <div>
-          {children}
-        </div>        
+        {children}    
       </section>
     </main>
   );

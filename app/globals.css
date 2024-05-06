@@ -1,15 +1,16 @@
 :root {
   --max-width: 1140px;
-  --max-card-width: 720px;
-  --border-radius: 12px;
+  --max-card-width: 540px;
+  --border-radius: 6px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --text-color: #000;
   --background-color: #DCCFCF;
-  --foreground-color: #fff;
+  --foreground-color: #E1DDDD;
   --primary-color: #fc5c41;
+  --primary-color-interacted: #fc5c41;
   --text-against-primary: #000;
   --interactive-color: #23c1e0;
 }
@@ -32,6 +33,27 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--interactive-color);
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  padding: .5em;
+  border-radius: var(--border-radius);
+}
+
+button:hover {
+  filter: brightness(85%);
+}
+
+.primary-button {
+  composes: button;
+  background-color: var(--primary-color);
+  color: var(--text-against-primary);
+  font-size: 1.25rem;
 }

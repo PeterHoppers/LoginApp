@@ -1,42 +1,29 @@
 import Link from "next/link";
+import styles from "./login-form.module.css";
 
 export default function LoginForm() {
     return (
-        <form className="">
-            <div className="">
-                <label
+        <form className={styles.form}>
+           <input
                 className=""
-                htmlFor="email"
-                >
-                Email
-                </label>
-                <input
-                    className=""
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                />
-            </div>
-            <div className="">
-                <label
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                aria-label="Email text input"
+                required
+            />
+            <input
                 className=""
-                htmlFor="password"
-                >
-                Password
-                </label>
-                <input
-                    className=""
-                    id="password"
-                    type="password"
-                    name="password"
-                    placeholder="Enter password"
-                    required
-                    minLength={6}
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Password"
+                aria-label="Password text input"
+                required
+                minLength={6}
               />
-            </div>
-            <button>
+            <button className="primary-button">
                 Login
             </button>
             <Link

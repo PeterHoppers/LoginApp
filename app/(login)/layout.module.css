@@ -9,11 +9,15 @@
 
 .card { 
     width: 100%;
-    max-width: var(--max-card-width, 720px);
+    max-width: var(--max-card-width, 540px);
     border: 1px solid var(--text-color);
-    border-radius: var(--border-radius);
+    border-radius: calc(var(--border-radius) * 2);
     background-color: var(--foreground-color);
     box-shadow: 2px 3px 4px 2px var(--text-color);
-    padding: 1rem;
+    padding: 2.5rem;
     text-align: center;
+}
+
+.card h1 {
+    font-size: 2em;
 }
