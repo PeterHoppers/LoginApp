@@ -6,9 +6,10 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --text-color: #000;
   --background-color: #DCCFCF;
   --foreground-color: #E1DDDD;
+  --text-color: #000;
+  --background-against-text-color: #fff;
   --primary-color: #fc5c41;
   --primary-color-interacted: #fc5c41;
   --text-against-primary: #000;
@@ -59,8 +60,10 @@ form {
 form input {
   font-size: 1.125em;
   padding: .5em;
-  border: 2px solid black;
+  border: 2px solid var(--text-color);
   border-radius: var(--border-radius);
+  color: var(--text-color);
+  background-color: var(--background-against-text-color);
 }
 
 button, 
@@ -83,7 +86,7 @@ button:hover,
 
 .card {
   width: 100%;
-  max-width: var(--max-card-width, 540px);
+  max-width: var(--max-card-width);
   border: 1px solid var(--text-color);
   border-radius: calc(var(--border-radius) * 2);
   background-color: var(--foreground-color);
