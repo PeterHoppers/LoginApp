@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\""
   },
   "dependencies": {
     "@vercel/postgres": "^0.8.0",
@@ -14,6 +16,7 @@
     "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
+    "start-server-and-test": "^2.0.3",
     "zod": "^3.23.6"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "bcrypt": "^5.1.1",
+    "cypress": "^13.8.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "typescript": "^5"

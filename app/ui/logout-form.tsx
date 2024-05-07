@@ -11,7 +11,7 @@ export default function LogoutForm() {
               }}
             >
               <button className="primary-button">
-                Sign Out
+                Logout
               </button>
             </form>
         </>

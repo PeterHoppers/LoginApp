@@ -4,6 +4,8 @@ import { signIn } from "next-auth/react";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import styles from './login-form.module.css';
+
 export default function LoginForm() {
     const [error, setError] = useState<string>(""); 
     const router = useRouter();   
@@ -53,7 +55,7 @@ export default function LoginForm() {
             </button>
             {error !== "" && 
                 <div>
-                    <p>{error}</p>
+                    <p className={styles.error}>{error}</p>
                 </div>
             }
         </form>
