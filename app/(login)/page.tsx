@@ -14,10 +14,14 @@ export default async function LoginPage() {
   }
 
   return (
-    <div className={styles.container}>
-      <GoogleLogin/>
-      <p>or</p>
-      <LoginForm/>
-    </div>    
+    <>
+      <h1>The Login Application</h1>
+      <div className={styles.container}>
+        <GoogleLogin/>
+        <p>or</p>
+        <LoginForm/>
+      </div>    
+    </>
+    
   );
 }

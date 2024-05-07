@@ -19,7 +19,13 @@ export default function RootLayout({
   return (
     <SessionWrapper>
         <html lang="en">
-          <body className={`${inter.className}`}>{children}</body>
+          <body className={`${inter.className}`}>
+            <main>
+              <section className={`card`}>        
+                {children}    
+              </section>
+            </main>
+          </body>
         </html>
     </SessionWrapper>
     
