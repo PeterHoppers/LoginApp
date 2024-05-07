@@ -41,19 +41,33 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
+button, 
+.button {
   cursor: pointer;
   padding: .5em;
   border-radius: var(--border-radius);
 }
 
-button:hover {
+button:hover,
+.button:hover  {
   filter: brightness(85%);
 }
 
 .primary-button {
-  composes: button;
   background-color: var(--primary-color);
   color: var(--text-against-primary);
   font-size: 1.25rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form input {
+  font-size: 1.125em;
+  padding: .5em;
+  border: 2px solid black;
+  border-radius: var(--border-radius);
 }

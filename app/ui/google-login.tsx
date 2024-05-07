@@ -1,25 +1,18 @@
 "use client"
 
-import { signIn, useSession } from "next-auth/react"
+import { signIn } from "next-auth/react"
+import Image from "next/image"
+import styles from './google-login.module.css';
 
-export default function GoogleLogin() {
-    const {data: session} = useSession();
-    
+export default function GoogleLogin() {    
     return (
         <>
-            {session ? 
-            (
-                <>
-                    <h1>In a session</h1>
-                </>
-            ) : 
-            (
-                <>
-                    <button onClick={() => signIn('google')}>Sign in with google</button>
-                </>
-            )
-
-            }
+            <div 
+                className={`${styles.google} button`}
+                onClick={() => signIn('google')}>
+                    <Image src={"/google.svg"} alt="Google's logo" width={25} height={25}/>
+                    <span>Continue with Google</span>
+            </div>
         </>
     )
 }
