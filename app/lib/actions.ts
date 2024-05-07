@@ -11,7 +11,8 @@ export async function authenticate(
         email: formData.get('email'),
         password: formData.get('password')
       });
-    } catch (error) {      
-      return "Something went wrong";
+    } catch (error: any) {   
+        const err = error as Error;
+        return err.message;
     }
   }

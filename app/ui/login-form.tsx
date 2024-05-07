@@ -2,15 +2,33 @@
 
 import Link from "next/link";
 import styles from "./login-form.module.css";
-import { useFormState, useFormStatus } from 'react-dom';
-import { authenticate } from '@/app/lib/actions';
+import { signIn } from "next-auth/react";
+import React, { useState } from "react";
+import { redirect } from 'next/navigation';
 
 export default function LoginForm() {
-    const [errorMessage, dispatch] = useFormState(authenticate, undefined);
-    const { pending } = useFormStatus();
-
+    const [error, setError] = useState<string>("");    
+    const handleSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+    ): Promise<void> => {
+        e.preventDefault();
+        const _target = e.target as any;
+        const email = _target.email.value;
+        const password = _target.password.value;
+        const result = await signIn("credentials", {
+            email,
+            password,
+            redirect: false,
+        });
+        if (result?.error) {
+            setError(result.error);
+        } else {
+            setError("");
+            redirect("/display");
+        }
+    };
     return (
-        <form action={dispatch} className={styles.form}>
+        <form onSubmit={handleSubmit} className={styles.form}>
            <input
                 className=""
                 id="email"
@@ -35,11 +53,17 @@ export default function LoginForm() {
             >
                 Login
             </button>
+            {error !== "" && 
+                <div>
+                    <p>{error}</p>
+                </div>
+            }
             <Link
                 href={"/create"}
             >
                 Create Account
             </Link>
+            
         </form>
     );
 }

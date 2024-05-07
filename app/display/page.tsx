@@ -1,21 +1,22 @@
-'use client';
-
 import styles from "./page.module.css";
 import LoginForm from "../ui/login-form";
 import { signOut } from "next-auth/react";
+import { getServerSession } from "next-auth/next"
+import { redirect } from 'next/navigation';
+import { authOptions } from "../lib/authOptions";
 
-export default function DisplayPage() {
+import LogoutForm from "../ui/logout-form";
+
+export default async function DisplayPage() {
+  const session = await getServerSession(authOptions);
+
+  if(session === null){
+    redirect("/");
+  }
+
   return (
     <>
-     <form
-          action={async () => {
-            await signOut();
-          }}
-        >
-          <button>
-            Sign Out
-          </button>
-        </form>
+     <LogoutForm/>
     </>
   );
 }

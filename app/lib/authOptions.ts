@@ -11,8 +11,7 @@ async function getUser(email: string): Promise<User | undefined> {
     try {
       const user = await sql<User>`SELECT * FROM users WHERE email=${email}`;
       return user.rows[0];
-    } catch (error) {
-      console.error('Failed to fetch user:', error);
+    } catch (error) {      
       throw new Error('Failed to fetch user.');
     }
   }
@@ -56,5 +55,8 @@ export const authOptions: NextAuthOptions = {
             },
           }),
     ],
+    session: {
+        strategy: "jwt",
+    },
     secret: process.env.NEXTAUTH_SECRET
 }
