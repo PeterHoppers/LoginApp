@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import { signIn } from "next-auth/react";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -57,12 +56,6 @@ export default function LoginForm() {
                     <p>{error}</p>
                 </div>
             }
-            <Link
-                href={"/create"}
-            >
-                Create Account
-            </Link>
-            
         </form>
     );
 }
