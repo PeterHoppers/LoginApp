@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;    
+  padding: .5rem;
+  max-width: 325px;
+  margin: auto;
+}
+
+.info {
+  display: flex;
+  gap: .25em;
+}

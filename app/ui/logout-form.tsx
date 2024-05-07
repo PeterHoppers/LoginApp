@@ -10,7 +10,7 @@ export default function LogoutForm() {
                 await signOut();
               }}
             >
-              <button>
+              <button className="primary-button">
                 Sign Out
               </button>
             </form>

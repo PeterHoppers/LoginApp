@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import React, { useState } from "react";
-import { redirect } from 'next/navigation';
 import { useRouter } from "next/navigation";
 
 export default function LoginForm() {

@@ -32,6 +32,15 @@ body {
   background-color: var(--background-color);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
 a {
   color: var(--interactive-color);
   text-decoration: none;
@@ -39,6 +48,19 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form input {
+  font-size: 1.125em;
+  padding: .5em;
+  border: 2px solid black;
+  border-radius: var(--border-radius);
 }
 
 button, 
@@ -59,15 +81,11 @@ button:hover,
   font-size: 1.25rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-form input {
-  font-size: 1.125em;
-  padding: .5em;
-  border: 2px solid black;
-  border-radius: var(--border-radius);
+.card {
+  border: 1px solid var(--text-color);
+  border-radius: calc(var(--border-radius) * 2);
+  background-color: var(--foreground-color);
+  box-shadow: 2px 3px 4px 2px var(--text-color);
+  padding: 2.5rem;
+  text-align: center;
 }
