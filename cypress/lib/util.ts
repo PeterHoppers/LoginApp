@@ -1,5 +1,7 @@
 
-import { LanguageStrings } from "../../lib/strings";
+import { LanguageStrings, Page } from "../../lib/strings";
+
+const rootDirectory = "http://localhost:3000";
 
 export function attemptLogIn(email: string, password: string) {
     // fill in the form
@@ -7,4 +9,8 @@ export function attemptLogIn(email: string, password: string) {
     cy.get('input[type="password"]').type(password)
 
     cy.get('button').contains(LanguageStrings.LogIn).click();
-}  
+}
+
+export function visitLoginPage() {
+    cy.visit(rootDirectory + Page.LogIn);
+}
