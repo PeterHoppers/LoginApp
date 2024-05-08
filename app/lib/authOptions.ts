@@ -4,10 +4,11 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { z } from 'zod';
 import bcrypt from 'bcrypt';
 import { getUser } from "./data";
+import { LanguageStrings, Page } from "@/lib/strings";
 
 export const authOptions: NextAuthOptions = {
     pages: {
-        signIn: '/',
+        signIn: Page.LogIn,
     },
     providers: [
         GoogleProvider({
@@ -29,18 +30,18 @@ export const authOptions: NextAuthOptions = {
                 const { email, password } = parsedCredentials.data;
                 const user = await getUser(email);
                 if (!user) {
-                    throw new Error("Invalid email was provided.");
+                    throw new Error(LanguageStrings.Error_Email);
                 }
                 const passwordsMatch = await bcrypt.compare(password, user.password);               
                 
                 if (passwordsMatch) {
                     return user;
                 } else {
-                    throw new Error("Invalid password was provided.");
+                    throw new Error(LanguageStrings.Error_Password);
                 }
               }
        
-              throw new Error("Provided credentials are not formatted in the correct fashion.");
+              throw new Error(LanguageStrings.Error_Formatting);
             },
           }),
     ],

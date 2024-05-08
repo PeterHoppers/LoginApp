@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { LanguageStrings } from "@/lib/strings";
 
 import styles from './login-form.module.css';
 
@@ -51,7 +52,7 @@ export default function LoginForm() {
             <button 
                 className="primary-button"
             >
-                Login
+                {LanguageStrings.LogIn}
             </button>
             {error !== "" && 
                 <div>

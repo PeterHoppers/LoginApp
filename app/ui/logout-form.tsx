@@ -1,6 +1,7 @@
 'use client';
 
 import { signOut } from "next-auth/react";
+import { LanguageStrings } from "@/lib/strings";
 
 export default function LogoutForm() {
     return (
@@ -11,7 +12,7 @@ export default function LogoutForm() {
               }}
             >
               <button className="primary-button">
-                Logout
+                {LanguageStrings.LogOut}
               </button>
             </form>
         </>

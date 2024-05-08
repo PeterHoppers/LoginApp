@@ -5,12 +5,13 @@ import { redirect } from 'next/navigation';
 import { authOptions } from "../lib/authOptions";
 
 import GoogleLogin from "../ui/GoogleLogin/google-login";
+import { Page } from "@/lib/strings";
 
 export default async function LoginPage() {
   const session = await getServerSession(authOptions);
 
   if(session !== null){
-    redirect("/display");
+    redirect(Page.Display);
   }
 
   return (

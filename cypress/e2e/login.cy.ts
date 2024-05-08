@@ -1,9 +1,12 @@
 /* eslint-disable */
-// Cypress E2E Test
 
-const legitEmail : string = 'example@user.com';
+import { attemptLogIn } from "../lib/util";
+import { LanguageStrings } from "../../lib/strings";
+import { loginEmail, loginPassword } from "../lib/secrets";
+
+const legitEmail : string = loginEmail;
 const badEmail: string = 'not@user.com';
-const legitPassword : string = '123456';
+const legitPassword : string = loginPassword;
 const badPassword: string = 'badpassword';
 
 describe("Login Auth", () => {
@@ -12,7 +15,7 @@ describe("Login Auth", () => {
         cy.visit("http://localhost:3000");
 
         attemptLogIn(badEmail, badPassword);
-        cy.contains('p', 'Invalid email was provided.').should('be.visible')
+        cy.contains('p', LanguageStrings.Error_Email).should('be.visible')
     });
 
     it("user should get error with bad password", () => {
@@ -20,7 +23,7 @@ describe("Login Auth", () => {
         cy.visit("http://localhost:3000");
         
         attemptLogIn(legitEmail, badPassword);
-        cy.contains('p', 'Invalid password was provided.').should('be.visible')
+        cy.contains('p', LanguageStrings.Error_Password).should('be.visible')
     });
 
     it("user should be able to log in", () => {
@@ -28,7 +31,7 @@ describe("Login Auth", () => {
         cy.visit("http://localhost:3000");
 
         attemptLogIn(legitEmail, legitPassword);
-        cy.contains('button', 'Logout').should('be.visible')
+        cy.contains('button', LanguageStrings.LogOut).should('be.visible')
     });
 });
 
@@ -50,13 +53,5 @@ describe("User Validation", () => {
     });
 });
 
-function attemptLogIn(email: string, password: string) {
-    // fill in the form
-    cy.get('input[type="email"]').type(email)
-    cy.get('input[type="password"]').type(password)
-
-    cy.get('button').contains('Login').click();
-}
-  
 // Prevent TypeScript from reading file as legacy script
 export {};
