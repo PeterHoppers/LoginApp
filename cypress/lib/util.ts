@@ -1,6 +1,7 @@
 
 import { LanguageStrings, Page } from "../../lib/strings";
 
+//change this root directory to point tests at either local, dev, or production
 const rootDirectory = "http://localhost:3000";
 
 export function attemptLogIn(email: string, password: string) {
