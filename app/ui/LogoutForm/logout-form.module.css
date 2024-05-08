@@ -1,0 +1,6 @@
+.signOut {
+  composes: primary-button from '../../app.module.css';
+  font-size: 1.25rem;
+  width: 75%;
+  margin-top: 1rem;
+}

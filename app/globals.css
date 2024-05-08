@@ -2,9 +2,6 @@
   --max-width: 1140px;
   --max-card-width: 540px;
   --border-radius: 6px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --background-color: #DCCFCF;
   --foreground-color: #E1DDDD;
@@ -51,50 +48,9 @@ a:hover {
   text-decoration: underline;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-form input {
-  font-size: 1.125em;
-  padding: .5em;
-  border: 2px solid var(--text-color);
-  border-radius: var(--border-radius);
-  color: var(--text-color);
-  background-color: var(--background-against-text-color);
-}
-
-button, 
-.button {
-  cursor: pointer;
-  padding: .5em;
-  border-radius: var(--border-radius);
-}
-
-button:hover,
-.button:hover  {
-  filter: brightness(85%);
-}
-
-.primary-button {
-  background-color: var(--primary-color);
-  color: var(--text-against-primary);
-  font-size: 1.25rem;
-}
-
-.card {
-  width: 100%;
-  max-width: var(--max-card-width);
-  border: 1px solid var(--text-color);
-  border-radius: calc(var(--border-radius) * 2);
-  background-color: var(--foreground-color);
-  box-shadow: 2px 3px 4px 2px var(--text-color);
-  padding: 2.5rem;
-  text-align: center;
-}
-
-.card h1 {
-  font-size: 2em;
+@media (max-width: 768px) {
+  main {
+    padding: .5rem;
+    justify-content: center;
+  }
 }

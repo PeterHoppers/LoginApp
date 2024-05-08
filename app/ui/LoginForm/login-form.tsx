@@ -29,9 +29,9 @@ export default function LoginForm() {
         }
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form}>
            <input
-                className=""
+                className={styles.input}
                 id="email"
                 type="email"
                 name="email"
@@ -40,7 +40,7 @@ export default function LoginForm() {
                 required
             />
             <input
-                className=""
+                className={styles.input}
                 id="password"
                 type="password"
                 name="password"
@@ -50,7 +50,7 @@ export default function LoginForm() {
                 minLength={6}
               />
             <button 
-                className="primary-button"
+                className={styles.login}
             >
                 {LanguageStrings.LogIn}
             </button>

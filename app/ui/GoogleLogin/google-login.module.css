@@ -1,10 +1,8 @@
 .google {
-    border: 1px solid var(--primary-color);
-    color: var(--text-color);
-    background-color: var(--background-against-text-color);
-    font-size: 1.125em;
+  composes: outline-button from '../../app.module.css';
+  font-size: 1.125em;
 
-    display: flex;
-    justify-content: center;
-    gap: .5em;
-  }
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+}

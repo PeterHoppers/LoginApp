@@ -1,4 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input {
+  font-size: 1.125em;
+  padding: .5em;
+  border: 2px solid var(--text-color);
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  background-color: var(--background-against-text-color);
+}
+
 .error {
   font-size: 1.15em;
   font-weight: bold;
+}
+
+.login {  
+  composes: primary-button from '../../app.module.css';
+  font-size: 1.35rem;
 }

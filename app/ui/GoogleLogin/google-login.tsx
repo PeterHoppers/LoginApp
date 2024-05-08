@@ -9,7 +9,7 @@ export default function GoogleLogin() {
     return (
         <>
             <div 
-                className={`${styles.google} button`}
+                className={styles.google}
                 onClick={() => signIn('google')}>
                     <Image src={"/google.svg"} alt="Google's logo" width={25} height={25}/>
                     <span>{LanguageStrings.GoogleLogin}</span>

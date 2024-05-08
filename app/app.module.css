@@ -1,0 +1,22 @@
+.button {
+  cursor: pointer;
+  padding: .5em;
+  border-radius: var(--border-radius);
+}
+
+.button:hover  {
+  filter: brightness(85%);
+}
+
+.primary-button {
+  composes: button;
+  background-color: var(--primary-color);
+  color: var(--text-against-primary);
+}
+
+.outline-button {
+  composes: button;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  background-color: var(--background-against-text-color);
+}

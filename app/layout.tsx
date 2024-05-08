@@ -21,7 +21,7 @@ export default function RootLayout({
         <html lang="en">
           <body className={`${inter.className}`}>
             <main>
-              <section className={`card`}>        
+              <section className={styles.card}>        
                 {children}    
               </section>
             </main>

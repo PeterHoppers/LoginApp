@@ -1,5 +1,5 @@
 import { Session } from "next-auth";
-import LogoutForm from "../logout-form";
+import LogoutForm from "../LogoutForm/logout-form";
 import styles from './session-display.module.css';
 
 export default function SessionDisplay({session} : {session : Session}) {

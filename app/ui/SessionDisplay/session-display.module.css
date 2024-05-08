@@ -10,4 +10,5 @@
 .info {
   display: flex;
   gap: .25em;
+  font-size: 1.15em;
 }
