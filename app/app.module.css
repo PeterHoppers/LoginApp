@@ -10,6 +10,7 @@
 
 .primary-button {
   composes: button;
+  border: 1px solid var(--primary-color);
   background-color: var(--primary-color);
   color: var(--text-against-primary);
 }

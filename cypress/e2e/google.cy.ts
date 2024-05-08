@@ -36,7 +36,7 @@ describe("Google Auth", () => {
                 },
               }
       
-              expect(body.given_name).to.eq(devName);
+              expect(userItem.user.givenName).to.eq(devName);
             })
           })
     });
